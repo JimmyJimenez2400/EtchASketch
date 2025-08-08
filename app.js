@@ -12,8 +12,10 @@ function constructChildDivs() {
   return div;
 }
 
-function generateSquareDivs(div) {
-  container.appendChild(div);
+function generateSquareDivs() {
+  for (let i = 0; i < 10; i++) {
+    container.appendChild(constructChildDivs());
+  }
 }
 
-generateSquareDivs(constructChildDivs());
+generateSquareDivs();
