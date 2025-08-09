@@ -3,9 +3,7 @@ const container = document.querySelector('.divContainer');
 
 function constructChildDivs() {
   const div = document.createElement('div'); //our div creator
-  div.style.outline = '2px solid red';
-  div.style.height = '20px';
-  div.style.width = '20px';
+  div.style.outline = '1px solid red';
 
   div.setAttribute('class', 'childDiv');
 
@@ -13,9 +11,17 @@ function constructChildDivs() {
 }
 
 function generateSquareDivs() {
-  for (let i = 0; i < 10; i++) {
-    container.appendChild(constructChildDivs());
+  let total = 0;
+
+  for (let i = 0; i < 16; i++) {
+    for (let j = 0; j < 16; j++) {
+      container.appendChild(constructChildDivs());
+      total++;
+      console.log(total);
+    }
   }
+
+  console.log('Total is', total);
 }
 
 generateSquareDivs();
